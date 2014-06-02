@@ -19,6 +19,7 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
   Set SSH keys for both your local machine, and VPS. You might already added SSH keys for your local machine.
   
   Instructions for github: https://help.github.com/articles/generating-ssh-keys
+  
   Instructions for bitbucket: https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git
   
 [Step 3) Change password (optional)] 
@@ -38,7 +39,7 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
   
   <code>$ sudo adduser deployer sudo</code>
 
-[Step 6)] IP and Git setup
+[Step 6) IP and Git setup]
   At config/deploy.rb set up IP and git credentials for your app
 
 [Step 7) Install necesary programs]
@@ -58,7 +59,7 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
 
 
 [Step 8) Install ruby]
-  In the VPS:
+  In the VPS, execute:
   
   <code>rbenv install 2.1.2</code>
   
@@ -88,11 +89,12 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
   <code>cap deploy:cold</code>
 
   If this error arises:
-  <code>
-  An error occurred while installing json (1.8.1), and Bundler cannot continue.
-  Make sure that `gem install json -v '1.8.1'` succeeds before bundling.
-  </code>
+  
+  <i>An error occurred while installing json (1.8.1), and Bundler cannot continue.
+  Make sure that `gem install json -v '1.8.1'` succeeds before bundling.</i>
+  
   
   Go to the VPS, and execute:
-    <code>sudo gem install json -v '1.8.1'</code>
+  
+  <code>sudo gem install json -v '1.8.1'</code>
     
