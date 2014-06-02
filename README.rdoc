@@ -88,8 +88,10 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
   <code>cap deploy:cold</code>
 
   If this error arises:
-    An error occurred while installing json (1.8.1), and Bundler cannot continue.
-    Make sure that `gem install json -v '1.8.1'` succeeds before bundling.
+  <code>
+  An error occurred while installing json (1.8.1), and Bundler cannot continue.
+  Make sure that `gem install json -v '1.8.1'` succeeds before bundling.
+  </code>
   
   Go to the VPS, and execute:
     <code>sudo gem install json -v '1.8.1'</code>
