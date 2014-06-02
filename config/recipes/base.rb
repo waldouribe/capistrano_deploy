@@ -18,6 +18,7 @@ namespace :deploy do
     nginx.install
     postgresql.install
     nodejs.install
+    make.install
     redis.install
     rbenv.install
   end

@@ -52,8 +52,9 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
   3. nginx
   4. postresql
   5. nodejs
-  6. redis
-  7. rbenv
+  6. make
+  7. redis
+  8. rbenv
 
 
 [Step 8) Install ruby]
