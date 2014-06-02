@@ -15,6 +15,7 @@ namespace :deploy do
     install_libxslt
     install_python
 
+    git.install
     nginx.install
     postgresql.install
     nodejs.install

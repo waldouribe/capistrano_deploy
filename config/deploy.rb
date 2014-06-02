@@ -2,6 +2,7 @@ require "bundler/capistrano"
  
 # Load recipes
 load "config/recipes/base"
+load "config/recipes/git"
 load "config/recipes/make"
 load "config/recipes/nginx"
 load "config/recipes/unicorn"
