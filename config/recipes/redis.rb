@@ -1,4 +1,3 @@
-
 namespace :redis do
   set_default(:redis_port, 6379)
   desc "Install redis"
