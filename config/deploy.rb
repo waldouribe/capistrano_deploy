@@ -13,6 +13,7 @@ load "config/recipes/check"
 load "config/recipes/solr"
 load "config/recipes/redis"
 load "config/recipes/sidekiq"
+load "config/recipes/ruby_dev"
 
 # Server IP, and roles
 server "23.253.126.59", :web, :app, :db, primary: true

@@ -82,13 +82,7 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
   
   <code>cap deploy:setup</code>
 
-[Step 11) Install ruby-dev]
-  In the VPS, execute:
-  
-  <code>sudo apt-get install ruby-dev</code>
-
-
-[Step 12) Deploy]
+[Step 11) Deploy]
   In the app folder, execute:
 
   <code>cap deploy:cold</code>

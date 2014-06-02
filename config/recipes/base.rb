@@ -22,6 +22,7 @@ namespace :deploy do
     make.install
     redis.install
     rbenv.install
+    ruby_dev.install
   end
 
   desc "Update ubuntu packages"  
