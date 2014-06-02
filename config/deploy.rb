@@ -12,6 +12,7 @@ load "config/recipes/rbenv"
 load "config/recipes/check"
 load "config/recipes/solr"
 load "config/recipes/redis"
+load "config/recipes/bundler"
 load "config/recipes/sidekiq"
 load "config/recipes/ruby_dev"
 
