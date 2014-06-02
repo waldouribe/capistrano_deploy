@@ -12,7 +12,7 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
 
 == Deploy instructions
 [Step 1) Build a VPS]
-  Go to your VPS provider and create a server with Ubuntu 14.0.4. This deploy might work with older versions of Ubuntu, 
+  Go to your VPS provider and create a server with Ubuntu 14.04. This deploy might work with older versions of Ubuntu, 
   but it's on your own risk.
   
 [Step 2) Set SSH keys at github]
@@ -83,7 +83,12 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
   
   <code>cap deploy:setup</code>
 
-[Step 11) Deploy]
+[Step 11) Install bundler]
+  In the app folder, execute:
+
+  <code>cap bundler:install</code>
+
+[Step 12) Deploy]
   In the app folder, execute:
 
   <code>cap deploy:cold</code>
