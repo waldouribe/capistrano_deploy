@@ -9,12 +9,12 @@ namespace :redis do
   end
 
   task :setup do
-    # copy files to a proper place
+    # Copy files to a proper place
     run "#{sudo} cp /tmp/redis-2.6.14/src/redis-benchmark /usr/local/bin/"
     run "#{sudo} cp /tmp/redis-2.6.14/src/redis-cli /usr/local/bin/"
     run "#{sudo} cp /tmp/redis-2.6.14/src/redis-server /usr/local/bin/"
     run "#{sudo} cp /tmp/redis-2.6.14/redis.conf #{shared_path}/config/redis.conf"
-    # modify redis.conf
+    # Modify redis.conf
     run "#{sudo} sed -i 's/daemonize no/daemonize yes/' #{shared_path}/config/redis.conf"
     run "#{sudo} sed -i 's/redis.pid/redis_6379.pid/' #{shared_path}/config/redis.conf"
   end
