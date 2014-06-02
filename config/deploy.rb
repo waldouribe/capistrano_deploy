@@ -15,6 +15,8 @@ load "config/recipes/redis"
 load "config/recipes/bundler"
 load "config/recipes/sidekiq"
 load "config/recipes/ruby_dev"
+load "config/recipes/python"
+load "config/recipes/libxslt"
 
 # Server IP, and roles
 server "23.253.126.59", :web, :app, :db, primary: true
@@ -23,7 +25,6 @@ server "23.253.126.59", :web, :app, :db, primary: true
 set :user, "deployer"
 set :application, "capistrano_deploy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
-#set :deploy_via, :remote_cache
 set :use_sudo, false
 
 # Repository info
