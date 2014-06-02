@@ -13,7 +13,7 @@ load "config/recipes/redis"
 load "config/recipes/sidekiq"
 
 # Server IP, and roles
-server "107.170.154.233", :web, :app, :db, primary: true
+server "23.253.126.59", :web, :app, :db, primary: true
 
 # Application info
 set :user, "deployer"
