@@ -19,7 +19,8 @@ load "config/recipes/python"
 load "config/recipes/libxslt"
 
 # Server IP, and roles
-server "23.253.126.59", :web, :app, :db, primary: true
+set :ip, "198.61.208.253"
+server "#{ip}", :web, :app, :db, primary: true
 
 # Application info
 set :user, "deployer"
