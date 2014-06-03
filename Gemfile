@@ -38,6 +38,9 @@ gem 'unicorn', group: :production
 # Remote multi-server automation tool http://www.capistranorb.com
 gem 'capistrano', '~> 2.15.5', group: :development
 
+# Multiple stages deploy for capistrano
+gem 'capistrano-ext'
+
 # Pure Ruby implementation of an SSH (protocol 2) client 
 # http://net-ssh.github.com/net-ssh
 gem 'net-ssh', '~> 2.7.0'
