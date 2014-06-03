@@ -37,7 +37,7 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
 [Step 5) Give sudo privileges to deployer]
   In the VPS, execute:
   
-  <code>$ sudo adduser deployer sudo</code>
+  <code>sudo adduser deployer sudo</code>
 
 [Step 6) IP and Git setup]
   At config/deploy.rb set up IP and git credentials for your app
