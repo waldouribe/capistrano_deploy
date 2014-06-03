@@ -23,8 +23,6 @@ load "config/recipes/libxslt"
 set :stages, %w(production staging)
 set :default_stage, "staging"
 
-server "#{ip}", :web, :app, :db, primary: true
-
 # Application info
 set :user, "deployer"
 set :application, "capistrano_deploy"
