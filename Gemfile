@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -29,17 +26,25 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# For PostreSQL
-gem 'pg', group: :production
 
-# Use unicorn as the app server
-gem 'unicorn', group: :production
+group :production, :staging do
+  # For PostreSQL
+  gem 'pg'
 
-# Remote multi-server automation tool http://www.capistranorb.com
-gem 'capistrano', '~> 2.15.5', group: :development
+  # Use unicorn as the app server
+  gem 'unicorn'
+end
 
-# Multiple stages deploy for capistrano
-gem 'capistrano-ext'
+group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
+  # Remote multi-server automation tool http://www.capistranorb.com
+  gem 'capistrano', '~> 2.15.5', group: :development
+
+  # Multiple stages deploy for capistrano
+  gem 'capistrano-ext', group: :development
+end
 
 # Pure Ruby implementation of an SSH (protocol 2) client 
 # http://net-ssh.github.com/net-ssh
