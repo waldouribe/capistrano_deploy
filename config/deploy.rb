@@ -23,8 +23,6 @@ load "config/recipes/libxslt"
 set :stages, %w(production staging)
 set :default_stage, "staging"
 
-# Server IP, and roles
-set :ip, "198.61.208.253"
 server "#{ip}", :web, :app, :db, primary: true
 
 # Application info
