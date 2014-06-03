@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require 'capistrano/ext/multistage'
  
 # Load recipes
 load "config/recipes/base"
@@ -17,6 +18,10 @@ load "config/recipes/sidekiq"
 load "config/recipes/ruby_dev"
 load "config/recipes/python"
 load "config/recipes/libxslt"
+
+# Multistage
+set :stages, %w(production staging)
+set :default_stage, "staging"
 
 # Server IP, and roles
 set :ip, "198.61.208.253"
