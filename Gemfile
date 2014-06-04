@@ -44,8 +44,8 @@ group :development do
 
   # Multiple stages deploy for capistrano
   gem 'capistrano-ext', group: :development
-end
 
-# Pure Ruby implementation of an SSH (protocol 2) client 
-# http://net-ssh.github.com/net-ssh
-gem 'net-ssh', '~> 2.7.0'
+  # Pure Ruby implementation of an SSH (protocol 2) client 
+  # http://net-ssh.github.com/net-ssh
+  gem 'net-ssh', '~> 2.7.0'
+end
