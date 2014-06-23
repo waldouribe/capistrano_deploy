@@ -104,20 +104,43 @@ So when we say "In the VPS, execute: " then you must connect to the server by us
   <code>sudo gem install json -v '1.8.1'</code>
 
 == Integration with your project
-  To make this recipes in your own project, you need to copy the following files in the same 
-  folders:
+To make this recipes in your own project, you need to copy the following files in the same 
+folders:
 
-  capistrano_deploy/Capfile
-  capistrano_deploy/config/deploy.rb
-  capistrano_deploy/recipes/*
+capistrano_deploy/Capfile
+capistrano_deploy/config/deploy.rb
+capistrano_deploy/recipes/*
+
+And add the following lines to your Gemfile:
+
+<code>
+group :production do
+  # For PostreSQL
+  gem 'pg'
+
+  # Use unicorn as the app server
+  gem 'unicorn'
+end
+
+group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
+  # Remote multi-server automation tool http://www.capistranorb.com
+  gem 'capistrano', '~> 2.15.5', group: :development
+
+  # Pure Ruby implementation of an SSH (protocol 2) client 
+  gem 'net-ssh', '~> 2.7.0'
+end
+</code>
 
 == Fresh start
-  If you want to make a new rails project, I recommend to clone this repository and replace the words "capistrano_deploy" and "CapistranoDeploy" with the name of your project.
+If you want to make a new rails project, I recommend to clone this repository and replace the words "capistrano_deploy" and "CapistranoDeploy" with the name of your project.
 
-  For instance if the name of your project is MyRailsApp, then you should do the following replacements:
+For instance if the name of your project is MyRailsApp, then you should do the following replacements:
 
-  capistrano_deploy -> my_rails_app
-  CapistranoDeploy  -> MyRailsApp
+capistrano_deploy -> my_rails_app
+CapistranoDeploy  -> MyRailsApp
 
-  Make sure to make a case sensitive replacement
+Make sure to make a case sensitive replacement
 
