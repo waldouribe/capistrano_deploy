@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require 'capistrano/ext/multistage'
  
 # Load recipes
 load "config/recipes/base"
@@ -17,25 +18,29 @@ load "config/recipes/sidekiq"
 load "config/recipes/ruby_dev"
 load "config/recipes/python"
 load "config/recipes/libxslt"
+load "config/recipes/imagemagick"
+load "config/recipes/image_compression"
 
-# Server IP, and roles
-set :ip, "162.209.72.254"
-server "#{ip}", :web, :app, :db, primary: true
+set :stages, %w( staging production )
+set :default_stage, "staging"
 
 # Application info
 set :user, "deployer"
-set :application, "capistrano_deploy"
+set :application, "cbc_server"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
 
 # Repository info
 set :scm, "git"
-set :git_user, 'waldouribe'
+set :git_user, 'cranberrychic'
 set :repository, "git@github.com:#{git_user}/#{application}.git"
-set :branch, "master"
+
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 # Keep only the last 5 releases
+before "deploy:update_code", "sidekiq:quiet"
 after "deploy", "deploy:cleanup" 
+after "deploy",    "sidekiq:stop"
+after "deploy",   "sidekiq:start"

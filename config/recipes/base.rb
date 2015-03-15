@@ -24,6 +24,8 @@ namespace :deploy do
     redis.install
     rbenv.install
     ruby_dev.install
+    imagemagick.install
+    image_compression.install
   end
 
   desc "Update ubuntu packages"
