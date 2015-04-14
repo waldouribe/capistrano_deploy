@@ -1,13 +1,4 @@
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: <%= postgresql_database %>
-  pool: 5
-  username: <%= postgresql_user %>
-  password: <%= postgresql_password %>
-  host: <%= postgresql_host %>
-
-development:
+<%= rails_env %>:
   adapter: postgresql
   encoding: unicode
   database: <%= postgresql_database %>
