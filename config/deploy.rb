@@ -32,8 +32,8 @@ set :use_sudo, false
 # Repository info
 set :scm, "git"
 set :git_user, 'waldouribe'
-set :repository, "git@github.com:#{git_user}/#{application}.git"
-set :branch, "multiple_stages"
+set :code_hosting, "git@github.com"
+set :repository, "#{code_hosting}:#{git_user}/#{application}.git"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
